@@ -22,20 +22,27 @@ public class PlayerController : NetworkBehaviour
     private Rigidbody2D rg2d;
     private Animator animator;
     private int extraJump = 1;
+    private bool first = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rg2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
         moveInput = 0f;
+        //Debug.Log(hasAuthority);
+        //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!hasAuthority) return;
+        if (first)
+        {
+            first = false;
+            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
+        }
 
         moveInput = Input.GetAxis("Horizontal");
         jumpInput = Input.GetKeyDown(KeyCode.W);

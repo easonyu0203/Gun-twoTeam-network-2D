@@ -20,6 +20,7 @@ public class prepareGame : NetworkBehaviour
 
     private void Start()
     {
+       
         if (!isServer)
         {
             GameObject.Find("start").SetActive(false);
@@ -60,16 +61,17 @@ public class prepareGame : NetworkBehaviour
             NetworkServer.SpawnWithClientAuthority(temp, owner);
         }
 
-        turnOffUI();
+        RpcturnOffUI();
 
 
     }
 
-    void turnOffUI()
+    [ClientRpc]
+    void RpcturnOffUI()
     {
         GameObject.Find("RedPlayerCnt").SetActive(false);
         GameObject.Find("BluePlayerCnt").SetActive(false);
-        GameObject.Find("start").SetActive(false);
+        if(GameObject.Find("start") != null) GameObject.Find("start").SetActive(false);
     }
 
 }

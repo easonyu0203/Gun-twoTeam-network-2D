@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6753683847702167764}
   - component: {fileID: 114814498795855312}
   m_Layer: 10
-  m_Name: Player 1
+  m_Name: RedPlayer
   m_TagString: redTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5687208384582970477}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e731d7908b10b4dd2990e1f51bf41d8f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 5687208384582970476}
-  m_ParameterSendBits: 15
+  m_ParameterSendBits: 31
   param0: 
   param1: 
   param2: 
@@ -292,7 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72318646ab7d04728a0b063c0a0d196c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 3675201182950432900}
+  whatBullet: {fileID: 5068652910475916776, guid: caeb52e5d796b4ef0bf3237dc5a495f8,
+    type: 3}
+  animator: {fileID: 5687208384582970476}
+  fireCooldownTime: 0.3
 --- !u!1 &5687208385180067979
 GameObject:
   m_ObjectHideFlags: 0

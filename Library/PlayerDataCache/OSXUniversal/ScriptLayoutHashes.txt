@@ -197,6 +197,7 @@ c0201dbecd85f700bcdff493a272631d Cinemachine.dll:Cinemachine.CinemachineImpulseS
 dbfb4270852b0008a423a7418d9de4cf Cinemachine.dll:Cinemachine.CinemachineHardLockToTarget
 b5c3dbcb94925c8b595ad16a62b44788 Cinemachine.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 2792936179724025482dc04d68a47ca7 Cinemachine.dll:Cinemachine.CinemachineClearShot
-8ef6bd98c5375a533eeb2e45bc1cb244 Assembly-CSharp.dll:.PlayerFire
+b5e3ce129a8f02289afe58e9d3f507fc Assembly-CSharp.dll:.PlayerFire
 5846b44486a98e1b7e1ce532b5c0c62d Assembly-CSharp.dll:.Join
 dfddde0404675ecd40f58339612d63a5 Assembly-CSharp.dll:.prepareGame
+fc95065acade3c9be14c40ec43b37cc8 Assembly-CSharp.dll:.bullet
