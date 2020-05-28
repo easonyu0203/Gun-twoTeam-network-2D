@@ -13,6 +13,7 @@ public class Join : NetworkBehaviour
     {
         pregame = GameObject.Find("GameManager").GetComponent<prepareGame>();
         gameObject.name = gameObject.name + netId.ToString();
+        Debug.Log(isLocalPlayer);
         if (!isLocalPlayer) return;
         CmdAddPlayer();
         GameObject.Find("JoinRed").GetComponent<Button>().onClick.AddListener(JoinRed);
@@ -37,6 +38,7 @@ public class Join : NetworkBehaviour
         pregame.RedTeam.Add(gameObject.name);
         pregame.RedplayerCnt++;
         RpcUpdateRedCnt(pregame.RedplayerCnt);
+        RpcUpdateBlueCnt(pregame.BlueplayerCnt);
         Debug.Log(gameObject.name + "became red team\n red player cnt: " + pregame.RedplayerCnt);
     }
 
@@ -51,6 +53,7 @@ public class Join : NetworkBehaviour
     {
         pregame.BlueTeam.Add(gameObject.name);
         pregame.BlueplayerCnt++;
+        RpcUpdateRedCnt(pregame.RedplayerCnt);
         RpcUpdateBlueCnt(pregame.BlueplayerCnt);
         Debug.Log(gameObject.name + "became blue team\n blue player cnt: " + pregame.BlueplayerCnt);
     }
@@ -63,7 +66,8 @@ public class Join : NetworkBehaviour
     [Command]
     void CmdAddPlayer()
     {
-        Debug.Log("aa");
         pregame.AddPlayer();
+        RpcUpdateRedCnt(pregame.RedplayerCnt);
+        RpcUpdateBlueCnt(pregame.BlueplayerCnt);
     }
 }

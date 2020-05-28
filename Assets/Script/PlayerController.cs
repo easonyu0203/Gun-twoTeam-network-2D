@@ -14,7 +14,8 @@ public class PlayerController : NetworkBehaviour
     public Transform frontWallCheck;
     public LayerMask whatisGround;
 
-    private bool faceRight = true;
+    [SyncVar]
+    public bool faceRight = true;
     private bool isGrounded;
     private bool isOnWall;
     private float moveInput;

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - blueTeam
   - redTeam
+  - blueBullet
+  - redBullet
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - RedTeam
   - blueBullet
   - RedBullet
-  - 
+  - die
   - 
   - 
   - 

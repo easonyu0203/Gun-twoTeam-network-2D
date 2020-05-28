@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 114286572512100862}
   m_Layer: 11
   m_Name: blueBullet
-  m_TagString: blueTeam
+  m_TagString: blueBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 5376
   speed: 12
+  damage: 10
 --- !u!114 &114396255570296052
 MonoBehaviour:
   m_ObjectHideFlags: 0

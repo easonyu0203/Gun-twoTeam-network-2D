@@ -12,6 +12,7 @@ public class bullet : NetworkBehaviour
     Rigidbody2D rg2d;
     public LayerMask canHit;
     public float speed;
+    public float damage;
 
     [SyncVar]
     private bool faceRight;

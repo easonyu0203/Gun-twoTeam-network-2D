@@ -63,14 +63,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\healthBarBehave.cs" />
     <Compile Include="Assets\Script\bullet.cs" />
     <Compile Include="Assets\Script\Join.cs" />
     <Compile Include="Assets\Script\MyNetHUD.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\PlayerFire.cs" />
+    <Compile Include="Assets\Script\playerstate.cs" />
     <Compile Include="Assets\Script\prepareGame.cs" />
     <None Include="Assets\Medieval_pixel_art_asset_FREE\pixel_snapping_README.txt" />
     <None Include="Assets\Gun Hero 5\Read Me.txt" />
+    <Reference Include="Cinemachine">
+      <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -80,17 +85,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>/Users/eason/Desktop/unity/Gun-twoTeam-network-2D/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
