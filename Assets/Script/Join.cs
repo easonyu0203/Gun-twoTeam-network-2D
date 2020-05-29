@@ -22,8 +22,8 @@ public class Join : NetworkBehaviour
 
     private void Start()
     {
-        newRPCntTextPos = new Vector3(-14, 115, 0) + new Vector3(512, 384,0);
-        newBPCntTextPos = new Vector3(-16, 0, 0) + new Vector3(512, 384, 0);
+        newRPCntTextPos = new Vector3(0, 89, 0) + new Vector3(1662.7f, 1247,0);
+        newBPCntTextPos = new Vector3(0, -82, 0) + new Vector3(1662.7f, 1247, 0);
         pregame = GameObject.Find("GameManager").GetComponent<prepareGame>();
         reGame = GameObject.Find("GameManager").GetComponent<restartTheGame>();
         gameObject.name = gameObject.name + netId.ToString();   
@@ -34,7 +34,6 @@ public class Join : NetworkBehaviour
         ChooseTeam = GameObject.Find("ChooseTeam");
         RedPlayerCntText = GameObject.Find("RedPlayerCnt");
         BluePlayerCntText = GameObject.Find("BluePlayerCnt");
-        start = GameObject.Find("start");
         joinBlueBut = GameObject.Find("JoinBlue");
         JoinRedBut = GameObject.Find("JoinRed");
         JoinRedBut.GetComponent<Button>().onClick.AddListener(JoinRed);
@@ -90,6 +89,7 @@ public class Join : NetworkBehaviour
 
     void JoinRed()
     {
+        if (isServer) pregame.startButton.SetActive(true);
         Debug.Log("press join red button");
         CmdJoinRed();
         ChooseTeam.SetActive(false);
@@ -100,6 +100,7 @@ public class Join : NetworkBehaviour
 
     void JoinBlue()
     {
+        if (isServer) pregame.startButton.SetActive(true);
         CmdJoinBlue();
         ChooseTeam.SetActive(false);
         waitOtherUI.SetActive(true);

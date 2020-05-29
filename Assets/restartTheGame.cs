@@ -15,6 +15,8 @@ public class restartTheGame : NetworkBehaviour
     public GameObject joinBlue;
     public GameObject JoinRed;
     public GameObject thisClient;
+    public GameObject waitUI;
+    public prepareGame pGame;
 
     //public prepareGame preGame;
     public void restartGamepress()
@@ -29,6 +31,9 @@ public class restartTheGame : NetworkBehaviour
         ChooseTeam.SetActive(true);
         RedPlayerCntText.SetActive(true);
         BluePlayerCntText.SetActive(true);
+        waitUI.SetActive(false);
+        RedPlayerCntText.transform.position = pGame.OrgRPlayCntTextPos;
+        BluePlayerCntText.transform.position = pGame.OrgBPlayCntTextPos;
         if(isServer) start.SetActive(true);
         thisClient.GetComponent<Join>().CmdConfigeCnt();
         //CmdConfigeCnt();

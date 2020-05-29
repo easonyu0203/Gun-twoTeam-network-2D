@@ -18,6 +18,7 @@ public class prepareGame : NetworkBehaviour
     public int startGamePlayerCnt;
     public Vector3 OrgRPlayCntTextPos;
     public Vector3 OrgBPlayCntTextPos;
+    public GameObject startButton;
 
     //gameObject name
     public ArrayList RedTeam = new ArrayList();
@@ -66,11 +67,16 @@ public class prepareGame : NetworkBehaviour
         OrgRPlayCntTextPos = GameObject.Find("RedPlayerCnt").transform.position;
         OrgBPlayCntTextPos = GameObject.Find("BluePlayerCnt").transform.position;
         disconnectButton.GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
-        if (!isServer)
-        {
-            GameObject.Find("start").SetActive(false);
-        }
+        //if (!isServer)
+        //{
+        //    Invoke("setStartButton", 0.2f);
+        //}
     }
+
+    //void setStartButton()
+    //{
+    //    GameObject.Find("start").SetActive(false);
+    //}
 
     private void Update()
     {

@@ -69,7 +69,8 @@ public class playerstate : NetworkBehaviour
         }
         if(currentHealth <= 0)
         {
-            CmdDie();
+            isDie = true;
+            RpcDie();
             Invoke("CmdReSpawn", dieTime);
             RpcPlayDieUI(dieTime);
         }
@@ -100,19 +101,15 @@ public class playerstate : NetworkBehaviour
         RpcReSpawn();
     }
 
-    [Command]
-    void CmdDie()
-    {
-        isDie = true;
-        RpcDie();
-    }
+    
 
     [ClientRpc]
     void RpcDie()
     {
-        Debug.Log("die!!!!");
+        //Debug.Log("die!!!!");
         animator.SetBool("alive", false);
-        animator.SetTrigger("die");
+        animator.Play("die");
+        //animator.SetTrigger("die");
         if (hasAuthority)
         {
             GetComponent<PlayerController>().enabled = false;
