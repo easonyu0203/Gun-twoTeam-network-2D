@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class prepareGame : NetworkBehaviour
@@ -13,14 +14,54 @@ public class prepareGame : NetworkBehaviour
     public GameObject BluePlayer;
     public Transform[] RedSpawnPoint;
     public Transform[] BlueSpawnPoint;
+    public GameObject disconnectButton;
+    public int startGamePlayerCnt;
 
     //gameObject name
     public ArrayList RedTeam = new ArrayList();
     public ArrayList BlueTeam = new ArrayList();
+    public ArrayList playerName = new ArrayList();
+
+    public void restart()
+    {
+        playerCnt = 0;
+        RedplayerCnt = 0;
+        BlueplayerCnt = 0;
+        RedTeam.Clear();
+        BlueTeam.Clear();
+        playerName.Clear();
+        
+    }
+
+    //only run on server
+    public void remove(string name)
+    {
+        Debug.Log("removing " + name);
+        for(int i = 0; i < RedplayerCnt; i++)
+        {
+            if(name == RedTeam[i].ToString())
+            {
+                RedTeam.RemoveAt(i);
+                RedplayerCnt--;
+                playerCnt--;
+                break;
+            }
+        }
+        for(int i = 0; i < BlueplayerCnt; i++)
+        {
+            if(name == BlueTeam[i].ToString())
+            {
+                BlueTeam.RemoveAt(i);
+                BlueplayerCnt--;
+                playerCnt--;
+                break;
+            }
+        }
+    }
 
     private void Start()
     {
-       
+        disconnectButton.GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
         if (!isServer)
         {
             GameObject.Find("start").SetActive(false);
@@ -47,17 +88,24 @@ public class prepareGame : NetworkBehaviour
     [Command]
     void CmdStartGame()
     {
+        startGamePlayerCnt = RedplayerCnt + BlueplayerCnt;
         for(int i = 0; i < RedplayerCnt; i++)
         {
-            GameObject temp = (GameObject)Instantiate(RedPlayer, RedSpawnPoint[i]);
+            GameObject temp = (GameObject)Instantiate(RedPlayer, RedSpawnPoint[i].position, RedSpawnPoint[i].rotation);
             GameObject owner = GameObject.Find(RedTeam[i].ToString());
+            temp.GetComponent<playerstate>().owner = owner.name;
+            temp.name = "RedPlayer" + i.ToString();
+            playerName.Add(temp.name);
             NetworkServer.SpawnWithClientAuthority(temp, owner);
         }
 
         for (int i = 0; i < BlueplayerCnt; i++)
         {
-            GameObject temp = (GameObject)Instantiate(BluePlayer, BlueSpawnPoint[i]);
+            GameObject temp = (GameObject)Instantiate(BluePlayer, BlueSpawnPoint[i].position, BlueSpawnPoint[i].rotation);
             GameObject owner = GameObject.Find(BlueTeam[i].ToString());
+            temp.GetComponent<playerstate>().owner = owner.name;
+            temp.name = "BluePlayer" + i.ToString();
+            playerName.Add(temp.name);
             NetworkServer.SpawnWithClientAuthority(temp, owner);
         }
 

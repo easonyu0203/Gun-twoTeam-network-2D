@@ -31,6 +31,7 @@ public class PlayerController : NetworkBehaviour
         rg2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         moveInput = 0f;
+        transform.localScale = new Vector3(1, 1, 1);
         //Debug.Log(hasAuthority);
         //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = transform;
     }
@@ -111,7 +112,6 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     void RpcFlipAll()
     {
-        Debug.Log("flip");
         Flip();
     }
 }

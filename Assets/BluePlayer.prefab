@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 5687208384582970476}
-  m_ParameterSendBits: 255
+  m_ParameterSendBits: 191
   param0: 
   param1: 
   param2: 
@@ -318,6 +318,7 @@ MonoBehaviour:
   enemyBulletTag: redBullet
   hbhave: {fileID: 6678852421303917065}
   animator: {fileID: 5687208384582970476}
+  dieTime: 3
 --- !u!1 &5687208385180067979
 GameObject:
   m_ObjectHideFlags: 0

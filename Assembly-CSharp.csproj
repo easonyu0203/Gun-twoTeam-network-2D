@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DieText.cs" />
     <Compile Include="Assets\healthBarBehave.cs" />
+    <Compile Include="Assets\restartTheGame.cs" />
     <Compile Include="Assets\Script\bullet.cs" />
     <Compile Include="Assets\Script\Join.cs" />
     <Compile Include="Assets\Script\MyNetHUD.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Assets\Script\PlayerFire.cs" />
     <Compile Include="Assets\Script\playerstate.cs" />
     <Compile Include="Assets\Script\prepareGame.cs" />
+    <Compile Include="Assets\treasury.cs" />
     <None Include="Assets\Medieval_pixel_art_asset_FREE\pixel_snapping_README.txt" />
     <None Include="Assets\Gun Hero 5\Read Me.txt" />
     <Reference Include="Cinemachine">

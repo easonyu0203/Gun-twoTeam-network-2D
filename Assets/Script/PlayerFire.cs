@@ -26,7 +26,6 @@ public class PlayerFire : NetworkBehaviour
         if (!hasAuthority) return;
         if (Input.GetKey(KeyCode.Space) )
         {
-            Debug.Log("fire");
             animator.SetBool("shoot", true);
             if (Time.time < nextShootTime) return;
             nextShootTime = Time.time + fireCooldownTime;
@@ -51,11 +50,16 @@ public class PlayerFire : NetworkBehaviour
     void CmdFire(bool faceRight)
     {
         GameObject temp = (GameObject)Instantiate(whatBullet, firePoint.position, firePoint.rotation);
+            //Vector3 Scaler = temp.transform.localScale;
+            //Scaler.x *= -1;
+            //temp.transform.localScale = Scaler;
         if (!faceRight)
         {
-            Vector3 Scaler = temp.transform.localScale;
-            Scaler.x *= -1;
-            temp.transform.localScale = Scaler;
+            temp.GetComponent<Rigidbody2D>().velocity = Vector2.left * temp.GetComponent<bullet>().speed;
+        }
+        else
+        {
+            temp.GetComponent<Rigidbody2D>().velocity = Vector2.right * temp.GetComponent<bullet>().speed;
         }
         NetworkServer.Spawn(temp);
 

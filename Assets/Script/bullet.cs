@@ -14,31 +14,26 @@ public class bullet : NetworkBehaviour
     public float speed;
     public float damage;
 
-    [SyncVar]
-    private bool faceRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (isServer)
+        Debug.Log("bullet speed" + GetComponent<Rigidbody2D>().velocity.x);
+        if (!isServer) return;
+
+        if(rg2d.velocity.x < 0)
         {
-            if (transform.localScale.x > 0) faceRight = true;
-            else faceRight = false;
-            if (faceRight) rg2d.velocity = Vector2.right * speed;
-            else rg2d.velocity = Vector2.left * speed;
-            Debug.Log(transform.localScale.x);
-        }
-        else
-        {
-            if(!faceRight)
-            {
-                Vector3 Scaler = transform.localScale;
-                Scaler.x *= -1;
-                transform.localScale = Scaler;
-            }
+            RpcFlip();
         }
 
+    }
 
+    [ClientRpc]
+    void RpcFlip()
+    {
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
