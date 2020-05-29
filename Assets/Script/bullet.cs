@@ -21,11 +21,21 @@ public class bullet : NetworkBehaviour
         Debug.Log("bullet speed" + GetComponent<Rigidbody2D>().velocity.x);
         if (!isServer) return;
 
-        if(rg2d.velocity.x < 0)
+        if (rg2d.velocity.x < 0)
         {
+            //Vector3 Scaler = transform.localScale;
+            //Scaler.x *= -1;
+            //transform.localScale = Scaler;
             RpcFlip();
         }
+        RpcSetClientSpeed(rg2d.velocity.x);
 
+    }
+
+    [ClientRpc]
+    void RpcSetClientSpeed(float speed)
+    {
+        rg2d.velocity = Vector2.right * speed;
     }
 
     [ClientRpc]
@@ -38,17 +48,18 @@ public class bullet : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isServer) return;
+        //if (!isServer) return;
         rg2d.velocity = Vector2.zero;
         animator.SetBool("hit", true);
-        Invoke("CmdDestroy", 0.3f);
+        Destroy(gameObject, 0.3f);
+        //Invoke("CmdDestroy", 0.3f);
     }
 
-    [Command]
-    void CmdDestroy()
-    {
-        NetworkServer.Destroy(gameObject);
-    }
+    //[Command]
+    //void CmdDestroy()
+    //{
+    //    NetworkServer.Destroy(gameObject);
+    //}
 
-    
+
 }
