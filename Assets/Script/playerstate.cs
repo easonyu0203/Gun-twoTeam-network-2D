@@ -23,7 +23,7 @@ public class playerstate : NetworkBehaviour
 
     private void Start()
     {
-
+        animator.SetBool("alive", true);
         currentHealth = maxHealth;
         isDie = false;
         Orglayer = gameObject.layer;
@@ -64,16 +64,21 @@ public class playerstate : NetworkBehaviour
         if(collision.tag == enemyBulletTag)
         {
             currentHealth -= collision.GetComponent<bullet>().damage;
+            Debug.Log(gameObject.name + " is hit");
+            RpcSetHurt();
         }
-        Debug.Log(gameObject.name + " is hit");
-        animator.SetBool("hurt", true);
-        Invoke("setHurtF", 0.2f);
         if(currentHealth <= 0)
         {
             CmdDie();
             Invoke("CmdReSpawn", dieTime);
             RpcPlayDieUI(dieTime);
         }
+    }
+
+    [ClientRpc]
+    void RpcSetHurt()
+    {
+        animator.SetTrigger("hurt");
     }
 
     [ClientRpc]
@@ -88,8 +93,8 @@ public class playerstate : NetworkBehaviour
     [Command]
     void CmdReSpawn()
     {
-        
-        dieTime += 3;
+        //animator.SetBool("alive", true);
+        dieTime += 5;
         isDie = false;
         currentHealth = maxHealth;
         RpcReSpawn();
@@ -131,9 +136,9 @@ public class playerstate : NetworkBehaviour
     [ClientRpc]
     void RpcReSpawn()
     {
+            animator.SetBool("alive", true);
         if (hasAuthority)
         {
-            animator.SetBool("alive", true);
             GetComponent<PlayerController>().enabled = true;
             GetComponent<PlayerFire>().enabled = true;
             if (Orglayer == LayerMask.NameToLayer("blueTeam"))

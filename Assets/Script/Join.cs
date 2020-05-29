@@ -16,13 +16,20 @@ public class Join : NetworkBehaviour
     public GameObject joinBlueBut;
     public GameObject JoinRedBut;
     public restartTheGame reGame;
+    public GameObject waitOtherUI;
+    public Vector3 newRPCntTextPos;
+    public Vector3 newBPCntTextPos;
 
     private void Start()
     {
+        newRPCntTextPos = new Vector3(-14, 115, 0) + new Vector3(512, 384,0);
+        newBPCntTextPos = new Vector3(-16, 0, 0) + new Vector3(512, 384, 0);
         pregame = GameObject.Find("GameManager").GetComponent<prepareGame>();
         reGame = GameObject.Find("GameManager").GetComponent<restartTheGame>();
         gameObject.name = gameObject.name + netId.ToString();   
         if (!isLocalPlayer) return;
+        waitOtherUI = GameObject.Find("waitOther");
+        waitOtherUI.SetActive(false);
         CmdAddPlayer();
         ChooseTeam = GameObject.Find("ChooseTeam");
         RedPlayerCntText = GameObject.Find("RedPlayerCnt");
@@ -86,12 +93,18 @@ public class Join : NetworkBehaviour
         Debug.Log("press join red button");
         CmdJoinRed();
         ChooseTeam.SetActive(false);
+        waitOtherUI.SetActive(true);
+        RedPlayerCntText.transform.position = newRPCntTextPos;
+        BluePlayerCntText.transform.position = newBPCntTextPos;
     }
 
     void JoinBlue()
     {
         CmdJoinBlue();
         ChooseTeam.SetActive(false);
+        waitOtherUI.SetActive(true);
+        RedPlayerCntText.transform.position = newRPCntTextPos;
+        BluePlayerCntText.transform.position = newBPCntTextPos;
     }
 
     [Command]

@@ -16,6 +16,8 @@ public class prepareGame : NetworkBehaviour
     public Transform[] BlueSpawnPoint;
     public GameObject disconnectButton;
     public int startGamePlayerCnt;
+    public Vector3 OrgRPlayCntTextPos;
+    public Vector3 OrgBPlayCntTextPos;
 
     //gameObject name
     public ArrayList RedTeam = new ArrayList();
@@ -61,6 +63,8 @@ public class prepareGame : NetworkBehaviour
 
     private void Start()
     {
+        OrgRPlayCntTextPos = GameObject.Find("RedPlayerCnt").transform.position;
+        OrgBPlayCntTextPos = GameObject.Find("BluePlayerCnt").transform.position;
         disconnectButton.GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
         if (!isServer)
         {
@@ -117,8 +121,11 @@ public class prepareGame : NetworkBehaviour
     [ClientRpc]
     void RpcturnOffUI()
     {
+        GameObject.Find("BluePlayerCnt").transform.position = OrgBPlayCntTextPos;
+        GameObject.Find("RedPlayerCnt").transform.position = OrgRPlayCntTextPos;
         GameObject.Find("RedPlayerCnt").SetActive(false);
         GameObject.Find("BluePlayerCnt").SetActive(false);
+        GameObject.Find("waitOther").SetActive(false);
         if(GameObject.Find("start") != null) GameObject.Find("start").SetActive(false);
     }
 
