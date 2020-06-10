@@ -1,28 +1,22 @@
 ﻿<Properties StartupConfiguration="{700B50E3-1395-2803-73E6-F584D4C28087}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/restartTheGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/prepareGame.cs">
     <Files>
       <File FileName="Assets/Script/MyNetHUD.cs" Line="61" Column="97" />
-      <File FileName="Assets/Script/PlayerController.cs" Line="34" Column="53" />
-      <File FileName="Assets/Script/PlayerFire.cs" />
-      <File FileName="Assets/healthBarBehave.cs" />
-      <File FileName="Assets/treasury.cs" />
-      <File FileName="Assets/Script/playerstate.cs" Line="60" Column="56" />
+      <File FileName="Assets/Script/PlayerController.cs" />
+      <File FileName="Assets/Script/PlayerFire.cs" Line="1" Column="1" />
+      <File FileName="Assets/healthBarBehave.cs" Line="1" Column="1" />
+      <File FileName="Assets/treasury.cs" Line="72" Column="8" />
+      <File FileName="Assets/Script/playerstate.cs" Line="73" Column="19" />
       <File FileName="Assets/Script/bullet.cs" Line="57" Column="1" />
-      <File FileName="Assets/Script/Join.cs" Line="26" Column="81" />
-      <File FileName="Assets/Script/prepareGame.cs" Line="73" Column="12" />
-      <File FileName="Assets/restartTheGame.cs" Line="18" Column="1" />
+      <File FileName="Assets/Script/Join.cs" Line="144" Column="123" />
+      <File FileName="Assets/Script/prepareGame.cs" Line="15" Column="37" />
+      <File FileName="Assets/restartTheGame.cs" Line="30" Column="35" />
+      <File FileName="Assets/DieText.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Gun-twoTeam-network-2D" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="85cee41a-d3ca-4807-b576-96315bf5aedf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54117cf9-16c1-4d2f-a7d9-cb70363e8273" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -95,7 +95,7 @@ public class playerstate : NetworkBehaviour
     void CmdReSpawn()
     {
         //animator.SetBool("alive", true);
-        dieTime += 5;
+        dieTime += 3;
         isDie = false;
         currentHealth = maxHealth;
         RpcReSpawn();

@@ -80,7 +80,7 @@ public class prepareGame : NetworkBehaviour
 
     private void Update()
     {
-        if (RedplayerCnt + BlueplayerCnt == 10) startGame();
+        if (RedplayerCnt + BlueplayerCnt == 12) startGame();
     }
 
     public void AddPlayer()

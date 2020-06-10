@@ -508,6 +508,49 @@ RectTransform:
   m_AnchoredPosition: {x: 2.38, y: 5.09}
   m_SizeDelta: {x: 148.3, y: 18.56}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &137550928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137550929}
+  - component: {fileID: 137550930}
+  m_Layer: 0
+  m_Name: blueSpawn5
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &137550929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137550928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.46, y: 4.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042838914}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137550930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137550928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921ceb7939c624969a567b4c88e17315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &175260807
 GameObject:
   m_ObjectHideFlags: 0
@@ -17271,12 +17314,14 @@ MonoBehaviour:
   - {fileID: 836480230}
   - {fileID: 1612200153}
   - {fileID: 1299400878}
+  - {fileID: 624837814}
   BlueSpawnPoint:
   - {fileID: 1621827723}
   - {fileID: 1317891695}
   - {fileID: 927193746}
   - {fileID: 1875141872}
   - {fileID: 807930633}
+  - {fileID: 137550929}
   disconnectButton: {fileID: 298169742}
   startGamePlayerCnt: 0
   OrgRPlayCntTextPos: {x: 0, y: 0, z: 0}
@@ -17557,6 +17602,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 622316961}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &624837813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624837814}
+  - component: {fileID: 624837815}
+  m_Layer: 0
+  m_Name: redSpawn5
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624837814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624837813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.38, y: 1.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042838914}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624837815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624837813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921ceb7939c624969a567b4c88e17315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &641076825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17896,7 +17984,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Red team current player count:
 
-    0 / 5'
+    0 / 6'
 --- !u!222 &798226872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18136,10 +18224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3968638f2884470b85d4ddf7a1ef6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectingTime: 10
+  collectingTime: 20
   currentProgress: 0
   gameover: {fileID: 1207646034}
   endworlds: {fileID: 805676622}
+  dieUI: {fileID: 1443442220}
   pGame: {fileID: 542428012}
   slider: {fileID: 132294040}
 --- !u!61 &831951570
@@ -18316,7 +18405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042838914}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &836480231
 MonoBehaviour:
@@ -19450,7 +19539,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042838914}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1299400879
 MonoBehaviour:
@@ -20051,7 +20140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042838914}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1442300649
 MonoBehaviour:
@@ -20750,7 +20839,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Blue team current player count:
 
-    0 / 5'
+    0 / 6'
 --- !u!222 &1603648890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20788,7 +20877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042838914}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1612200154
 MonoBehaviour:
@@ -21157,7 +21246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042838914}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722491112
 MonoBehaviour:
@@ -64309,11 +64398,13 @@ Transform:
   - {fileID: 927193746}
   - {fileID: 1875141872}
   - {fileID: 807930633}
+  - {fileID: 137550929}
   - {fileID: 1722491111}
   - {fileID: 1442300648}
   - {fileID: 836480230}
   - {fileID: 1612200153}
   - {fileID: 1299400878}
+  - {fileID: 624837814}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64641,10 +64732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3968638f2884470b85d4ddf7a1ef6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectingTime: 10
+  collectingTime: 20
   currentProgress: 0
   gameover: {fileID: 1207646034}
   endworlds: {fileID: 805676622}
+  dieUI: {fileID: 1443442220}
   pGame: {fileID: 542428012}
   slider: {fileID: 1430508437}
 --- !u!61 &7384700395840757087

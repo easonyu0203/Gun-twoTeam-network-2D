@@ -10,6 +10,7 @@ public class treasury : NetworkBehaviour
     public float currentProgress;
     public GameObject gameover;
     public GameObject endworlds;
+    public GameObject dieUI;
     public prepareGame pGame;
     bool win;
 
@@ -68,6 +69,7 @@ public class treasury : NetworkBehaviour
        //maybe some clean up
        if (gameObject.tag == "redTeam") endworlds.GetComponent<Text>().text = "Blue Team win!!\nthank for playing!!";
        else endworlds.GetComponent<Text>().text = "Red Team win!!\nthank for playing!!";
+       dieUI.SetActive(false);
        gameover.SetActive(true);
         //GameObject.Find("GameManager").GetComponent<prepareGame>().restart();
         GameObject.Find("blueTeamTreasure").GetComponent<treasury>().setProccess(0f);
