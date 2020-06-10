@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{700B50E3-1395-2803-73E6-F584D4C28087}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/prepareGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/restartTheGame.cs">
     <Files>
       <File FileName="Assets/Script/MyNetHUD.cs" Line="61" Column="97" />
       <File FileName="Assets/Script/PlayerController.cs" />
-      <File FileName="Assets/Script/PlayerFire.cs" Line="1" Column="1" />
-      <File FileName="Assets/healthBarBehave.cs" Line="1" Column="1" />
-      <File FileName="Assets/treasury.cs" Line="72" Column="8" />
-      <File FileName="Assets/Script/playerstate.cs" Line="73" Column="19" />
-      <File FileName="Assets/Script/bullet.cs" Line="57" Column="1" />
-      <File FileName="Assets/Script/Join.cs" Line="144" Column="123" />
+      <File FileName="Assets/Script/PlayerFire.cs" />
+      <File FileName="Assets/healthBarBehave.cs" />
+      <File FileName="Assets/treasury.cs" />
+      <File FileName="Assets/Script/playerstate.cs" />
+      <File FileName="Assets/Script/bullet.cs" />
+      <File FileName="Assets/Script/Join.cs" />
       <File FileName="Assets/Script/prepareGame.cs" Line="15" Column="37" />
       <File FileName="Assets/restartTheGame.cs" Line="30" Column="35" />
       <File FileName="Assets/DieText.cs" Line="1" Column="1" />
@@ -16,7 +16,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54117cf9-16c1-4d2f-a7d9-cb70363e8273" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a8335f19-0bea-41c7-8b25-7a1e99d61ae1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

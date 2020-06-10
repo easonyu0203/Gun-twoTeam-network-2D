@@ -998,7 +998,7 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: 9475c1841585490e3fc5639523848186
+      Hash: 8821a4c9bbcca024f22aba6424f525a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: restartTheGame

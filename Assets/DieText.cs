@@ -7,7 +7,7 @@ public class DieText : MonoBehaviour
 {
     //public bool show = false;
     public float showTime = -1;
-    public GameObject whenDie;
+    public GameObject whenDie;  
 
     private void Update()
     {

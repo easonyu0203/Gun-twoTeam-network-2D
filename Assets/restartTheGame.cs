@@ -16,17 +16,21 @@ public class restartTheGame : NetworkBehaviour
     public GameObject JoinRed;
     public GameObject thisClient;
     public GameObject waitUI;
+    public DieText dietest;
     public prepareGame pGame;
 
     //public prepareGame preGame;
     public void restartGamepress()
     {
         //GetComponent<prepareGame>().restart();
+        dietest.showTime = 0f;
         RestartChooseTeamUI();
+
     }
 
     public void RestartChooseTeamUI()
     {
+        
         gameOver.SetActive(false);
         ChooseTeam.SetActive(true);
         RedPlayerCntText.SetActive(true);

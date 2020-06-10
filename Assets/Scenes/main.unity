@@ -17381,6 +17381,7 @@ MonoBehaviour:
   JoinRed: {fileID: 351608632}
   thisClient: {fileID: 0}
   waitUI: {fileID: 1875527357}
+  dietest: {fileID: 2132991277}
   pGame: {fileID: 542428012}
 --- !u!1 &580767062
 GameObject:
