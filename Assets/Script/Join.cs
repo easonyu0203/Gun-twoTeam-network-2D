@@ -124,7 +124,7 @@ public class Join : NetworkBehaviour
     {
         if (GameObject.Find("RedPlayerCnt") == null) return;
         GameObject.Find("RedPlayerCnt").GetComponent<Text>().text = "Red team current player count:\n" + redCnt +" / 6";
-        if (redCnt == 5) GameObject.Find("JoinRed").SetActive(false);
+        if (redCnt == 6) GameObject.Find("JoinRed").SetActive(false);
     }
 
     [Command]
@@ -142,7 +142,7 @@ public class Join : NetworkBehaviour
     {
         if (GameObject.Find("BluePlayerCnt") == null) return;
         GameObject.Find("BluePlayerCnt").GetComponent<Text>().text = "Blue team current player count:\n" + BlueCnt + " / 6";
-        if (BlueCnt == 5) GameObject.Find("JoinBlue").SetActive(false);
+        if (BlueCnt == 6) GameObject.Find("JoinBlue").SetActive(false);
     }
     [Command]
     void CmdAddPlayer()

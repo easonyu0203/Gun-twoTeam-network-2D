@@ -11,6 +11,7 @@ public class playerstate : NetworkBehaviour
     public float currentHealth;
     public float recoverRate;
     public string enemyBulletTag;
+    public DieText dietext;
     public GameObject canvas;
     [SerializeField]
     healthBarBehave hbhave;
@@ -27,7 +28,7 @@ public class playerstate : NetworkBehaviour
         currentHealth = maxHealth;
         isDie = false;
         Orglayer = gameObject.layer;
-        canvas = GameObject.Find("_Canvas");
+        dietext = GameObject.Find("_Canvas").GetComponentInChildren<DieText>();
         if (hasAuthority)
         {
             GameObject.Find("ButtonDisconnect").GetComponent<Button>().onClick.AddListener(destroythisPlayer);
@@ -87,7 +88,8 @@ public class playerstate : NetworkBehaviour
     {
         if (hasAuthority)
         {
-            canvas.GetComponentInChildren<DieText>().showTime = _dieTime;
+            //canvas.GetComponentInChildren<DieText>().showTime = _dieTime;
+            dietext.showTime = _dieTime;
         }
     }
 
