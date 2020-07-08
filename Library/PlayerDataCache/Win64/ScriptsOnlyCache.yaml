@@ -998,7 +998,7 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: 9475c1841585490e3fc5639523848186
+      Hash: 8821a4c9bbcca024f22aba6424f525a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: restartTheGame
@@ -1094,7 +1094,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: 82e93188a48b5b8325ab58b8b14daa29
+      Hash: 3148b13774a09fa879cb87c91b7baf56
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: playerstate
@@ -1180,4 +1180,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/menu.unity
   - Assets/Scenes/main.unity
-  playerPath: /Users/eason/Desktop/unity/Gun-twoTeam-network-2D/build/build_mac/Gun-twoTeam-network-2D.exe
+  playerPath: /Users/eason/Desktop/unity/Gun-twoTeam-network-2D/build/build_for_window/Gun-twoTeam-network-2D.exe

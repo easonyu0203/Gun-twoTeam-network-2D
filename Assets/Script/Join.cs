@@ -22,8 +22,8 @@ public class Join : NetworkBehaviour
 
     private void Start()
     {
-        newRPCntTextPos = new Vector3(0, 89, 0) + new Vector3(1662.7f, 1247,0);
-        newBPCntTextPos = new Vector3(0, -82, 0) + new Vector3(1662.7f, 1247, 0);
+        newRPCntTextPos = new Vector3(330, 280, 0) + new Vector3(512, 384, 0);
+        newBPCntTextPos = new Vector3(330, 200, 0) + new Vector3(512, 384, 0);
         pregame = GameObject.Find("GameManager").GetComponent<prepareGame>();
         reGame = GameObject.Find("GameManager").GetComponent<restartTheGame>();
         gameObject.name = gameObject.name + netId.ToString();   
